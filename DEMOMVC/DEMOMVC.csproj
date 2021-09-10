@@ -157,6 +157,10 @@
     <Compile Include="Migrations\202109100711385_qltable.Designer.cs">
       <DependentUpon>202109100711385_qltable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109100759539_abc.cs" />
+    <Compile Include="Migrations\202109100759539_abc.Designer.cs">
+      <DependentUpon>202109100759539_abc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
@@ -240,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109100711385_qltable.resx">
       <DependentUpon>202109100711385_qltable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100759539_abc.resx">
+      <DependentUpon>202109100759539_abc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
