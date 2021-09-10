@@ -8,10 +8,13 @@ namespace DEMOMVC.Models
 {
     public class Person
     {
-        public string PersonID { get; set; }
         [Required(ErrorMessage = "ID không được để trống")]
-        public string PersonName { get; set; }
+        public string PersonID { get; set; }
+        
         [Required(ErrorMessage = "Tên không được để trống")]
         [MinLength(3)]
+        public string PersonName { get; set; }
+        
+
     }
 }
