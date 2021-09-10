@@ -22,11 +22,11 @@ namespace DEMOMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Student std)
+        public ActionResult Create(Person std)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(std);
+                db.Persons.Add(std);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
