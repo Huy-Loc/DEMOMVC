@@ -3,19 +3,10 @@ namespace DEMOMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class create_table_student : DbMigration
+    public partial class qltable : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Account",
-                c => new
-                    {
-                        Usename = c.String(nullable: false, maxLength: 50),
-                        Password = c.String(maxLength: 50, unicode: false),
-                    })
-                .PrimaryKey(t => t.Usename);
-            
             CreateTable(
                 "dbo.Students",
                 c => new
@@ -30,7 +21,6 @@ namespace DEMOMVC.Migrations
         public override void Down()
         {
             DropTable("dbo.Students");
-            DropTable("dbo.Account");
         }
     }
 }

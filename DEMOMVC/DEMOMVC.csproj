@@ -129,21 +129,38 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202109080926353_create_table_student.cs" />
-    <Compile Include="Migrations\202109080926353_create_table_student.Designer.cs">
-      <DependentUpon>202109080926353_create_table_student.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202109080936318_add_column_student_address.cs" />
     <Compile Include="Migrations\202109080936318_add_column_student_address.Designer.cs">
       <DependentUpon>202109080936318_add_column_student_address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109100541466_create_table_Person.cs" />
+    <Compile Include="Migrations\202109100541466_create_table_Person.Designer.cs">
+      <DependentUpon>202109100541466_create_table_Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100621596_Altr_Column_Studet.cs" />
+    <Compile Include="Migrations\202109100621596_Altr_Column_Studet.Designer.cs">
+      <DependentUpon>202109100621596_Altr_Column_Studet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100632555_droptable.cs" />
+    <Compile Include="Migrations\202109100632555_droptable.Designer.cs">
+      <DependentUpon>202109100632555_droptable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100643084_create_person.cs" />
+    <Compile Include="Migrations\202109100643084_create_person.Designer.cs">
+      <DependentUpon>202109100643084_create_person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100711385_qltable.cs" />
+    <Compile Include="Migrations\202109100711385_qltable.Designer.cs">
+      <DependentUpon>202109100711385_qltable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,11 +200,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Delete.cshtml" />
-    <Content Include="Views\Student\Details.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -209,11 +223,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109080926353_create_table_student.resx">
-      <DependentUpon>202109080926353_create_table_student.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109080936318_add_column_student_address.resx">
       <DependentUpon>202109080936318_add_column_student_address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100541466_create_table_Person.resx">
+      <DependentUpon>202109100541466_create_table_Person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100621596_Altr_Column_Studet.resx">
+      <DependentUpon>202109100621596_Altr_Column_Studet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100632555_droptable.resx">
+      <DependentUpon>202109100632555_droptable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100643084_create_person.resx">
+      <DependentUpon>202109100643084_create_person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100711385_qltable.resx">
+      <DependentUpon>202109100711385_qltable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

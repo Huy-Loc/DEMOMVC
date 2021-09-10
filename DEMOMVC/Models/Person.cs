@@ -5,9 +5,9 @@ using System.Web;
 
 namespace DEMOMVC.Models
 {
-    public class Student
+    public class Person
     {
-        public String StudentID { get; set; }
-        public String StudentName { get; set; }
+        public string PersonID { get; set; }
+        public string PersonName { get; set; }
     }
 }
