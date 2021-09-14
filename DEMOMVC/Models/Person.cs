@@ -8,6 +8,7 @@ namespace DEMOMVC.Models
 {
     public class Person
     {
+        [Key]
         [Required(ErrorMessage = "ID không được để trống")]
         public string PersonID { get; set; }
         

@@ -128,8 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\QuanlySVsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,10 +164,20 @@
     <Compile Include="Migrations\202109100759539_abc.Designer.cs">
       <DependentUpon>202109100759539_abc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109140556150_create_table_employee.cs" />
+    <Compile Include="Migrations\202109140556150_create_table_employee.Designer.cs">
+      <DependentUpon>202109140556150_create_table_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109140621204_create_table_QLSV.cs" />
+    <Compile Include="Migrations\202109140621204_create_table_QLSV.Designer.cs">
+      <DependentUpon>202109140621204_create_table_QLSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\QuanlySV.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,6 +219,21 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Person\Create.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\QuanlySVs\Create.cshtml" />
+    <Content Include="Views\QuanlySVs\Delete.cshtml" />
+    <Content Include="Views\QuanlySVs\Details.cshtml" />
+    <Content Include="Views\QuanlySVs\Edit.cshtml" />
+    <Content Include="Views\QuanlySVs\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +275,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109100759539_abc.resx">
       <DependentUpon>202109100759539_abc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109140556150_create_table_employee.resx">
+      <DependentUpon>202109140556150_create_table_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109140621204_create_table_QLSV.resx">
+      <DependentUpon>202109140621204_create_table_QLSV.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

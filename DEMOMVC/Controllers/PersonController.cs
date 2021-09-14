@@ -13,6 +13,8 @@ namespace DEMOMVC.Controllers
         // GET: Person
         public ActionResult Index()
         {
+            var countModel = db.Persons.Count();
+            ViewBag.soBanGhi = countModel;
             var model = db.Persons.ToList();
             return View(model);
         }
@@ -32,7 +34,11 @@ namespace DEMOMVC.Controllers
             }
             return View();
         }
-        
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
 
     }
 }
