@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\QuanlySVsController.cs" />
+    <Compile Include="Controllers\StdnewController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +175,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
     <Compile Include="Models\Person.cs" />
@@ -234,6 +236,8 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Stdnew\Index.cshtml" />
+    <Content Include="Views\Stdnew\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
