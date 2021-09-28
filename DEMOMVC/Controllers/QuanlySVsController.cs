@@ -60,6 +60,7 @@ namespace DEMOMVC.Controllers
         }
 
         // GET: QuanlySVs/Edit/5
+       
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -79,7 +80,7 @@ namespace DEMOMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentID,StudentName,Address")] QuanlySV quanlySV)
+        public ActionResult Edit([Bind(Include = "StudentID,StudentName,Address,Comment")] QuanlySV quanlySV)
         {
             if (ModelState.IsValid)
             {
