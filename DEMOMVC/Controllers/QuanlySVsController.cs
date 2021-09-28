@@ -36,6 +36,7 @@ namespace DEMOMVC.Controllers
         }
 
         // GET: QuanlySVs/Create
+       
         public ActionResult Create()
         {
             return View();
