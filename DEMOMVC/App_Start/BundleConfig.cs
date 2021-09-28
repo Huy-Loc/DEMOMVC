@@ -14,6 +14,9 @@ namespace DEMOMVC
             bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
                         "~/Scripts/ckeditor/ckeditor.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ckfinder").Include(
+                        "~/Scripts/ckeditor/ckfinder.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
