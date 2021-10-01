@@ -13,17 +13,7 @@ namespace DEMOMVC.Controllers
     {
         Encrytion encry = new Encrytion();
         LapTrinhQuanLyDBcontext db = new LapTrinhQuanLyDBcontext();
-        public ActionResult RedirectToLocal(string returnUrl)
-        {
-            if (Url.IsLocalUrl(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
-        }
+       
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
@@ -46,14 +36,15 @@ namespace DEMOMVC.Controllers
         }
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
+            ViewBag.returnUrl = returnUrl;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login(Account acc)
+        public ActionResult Login(Account acc, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -77,5 +68,6 @@ namespace DEMOMVC.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+      
     }
 }
