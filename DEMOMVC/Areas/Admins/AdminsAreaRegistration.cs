@@ -17,7 +17,7 @@ namespace DEMOMVC.Areas.Admins
             context.MapRoute(
                 "Admins_default",
                 "Admins/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { areas = "Admins", controller = "HomeAdmin", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

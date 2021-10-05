@@ -8,6 +8,7 @@ namespace DEMOMVC.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View();
@@ -26,5 +27,6 @@ namespace DEMOMVC.Controllers
 
             return View();
         }
+      
     }
 }

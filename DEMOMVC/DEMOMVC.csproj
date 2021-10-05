@@ -129,12 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admins\AdminsAreaRegistration.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Admins\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Employees\Controllers\HomeEmpController.cs" />
+    <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\QuanlySVsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StdnewController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,15 +195,29 @@
     <Compile Include="Migrations\202110010612480_Acc.Designer.cs">
       <DependentUpon>202110010612480_Acc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110050549448_Role.cs" />
+    <Compile Include="Migrations\202110050549448_Role.Designer.cs">
+      <DependentUpon>202110050549448_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110050551343_Roles.cs" />
+    <Compile Include="Migrations\202110050551343_Roles.Designer.cs">
+      <DependentUpon>202110050551343_Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110050607485_add_column_acount.cs" />
+    <Compile Include="Migrations\202110050607485_add_column_acount.Designer.cs">
+      <DependentUpon>202110050607485_add_column_acount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\QuanlySV.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,12 +237,14 @@
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
-    <Content Include="Areas\Admins\Views\web.config" />
-    <Content Include="Areas\Admins\Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admins\Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Areas\Admins\Views\HomeAdmin\About.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admins\Views\web.config" />
+    <Content Include="Areas\Admins\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Employees\Views\web.config" />
+    <Content Include="Areas\Employees\Views\HomeEmp\Index.cshtml" />
+    <Content Include="Areas\Employees\Views\Shared\_LayoutEmp.cshtml" />
+    <Content Include="Areas\Admins\Views\Shared\_LayoutAdmin.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -613,10 +632,16 @@
     <Content Include="Views\Students\Index.cshtml" />
     <Content Include="Views\Stdnew\Index.cshtml" />
     <Content Include="Views\Stdnew\Create.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admins\Data\" />
+    <Folder Include="Areas\Employees\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -673,6 +698,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110010612480_Acc.resx">
       <DependentUpon>202110010612480_Acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110050549448_Role.resx">
+      <DependentUpon>202110050549448_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110050551343_Roles.resx">
+      <DependentUpon>202110050551343_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110050607485_add_column_acount.resx">
+      <DependentUpon>202110050607485_add_column_acount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

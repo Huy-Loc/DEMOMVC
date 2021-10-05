@@ -23,12 +23,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>                
-                    <li>@Html.ActionLink("Role", "Index", "Roles")</li>
-
-                    <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Admin", "Index", "HomeAdmin", new { area = "Admins" }, new { @class = "navbar-brand" })</li>
-                    
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>                 
+                    <li>@Html.ActionLink("Employee", "Index", "HomeEmp", new { area = "Employees" }, new { @class = "navbar-brand" })</li>                 
                     <li>@Html.ActionLink("Logout", "Logout", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>
                 </ul>
             </div>

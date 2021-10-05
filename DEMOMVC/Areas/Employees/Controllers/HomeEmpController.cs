@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DEMOMVC.Areas.Admins.Controllers
+namespace DEMOMVC.Areas.Employees.Controllers
 {
-    [Authorize(Roles ="Admin")]
-    public class HomeAdminController : Controller
+    [Authorize(Roles ="NV")]
+    public class HomeEmpController : Controller
     {
-        // GET: Admins/HomeAdmin
+        // GET: Employees/HomeEmp
         public ActionResult Index()
         {
             return View();
