@@ -13,5 +13,6 @@ namespace DEMOMVC.Models
         public string RoleID { get; set; }
         [StringLength(50)]
         public string RoleName { get; set; }
+        public ICollection<Account> Accounts { get; set; }
     }
 }

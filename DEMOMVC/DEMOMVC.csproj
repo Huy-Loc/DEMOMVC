@@ -133,6 +133,7 @@
     <Compile Include="Areas\Employees\Controllers\HomeEmpController.cs" />
     <Compile Include="Areas\Employees\EmployeesAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
@@ -207,10 +208,16 @@
     <Compile Include="Migrations\202110050607485_add_column_acount.Designer.cs">
       <DependentUpon>202110050607485_add_column_acount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111230628471_create_foreikey.cs" />
+    <Compile Include="Migrations\202111230628471_create_foreikey.Designer.cs">
+      <DependentUpon>202111230628471_create_foreikey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\ExcelProcess.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Sanpham.cs" />
     <Compile Include="Models\StringProcess.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LapTrinhQuanLyDBcontext.cs" />
@@ -637,11 +644,17 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Accs\Create.cshtml" />
+    <Content Include="Views\Accs\Delete.cshtml" />
+    <Content Include="Views\Accs\Details.cshtml" />
+    <Content Include="Views\Accs\Edit.cshtml" />
+    <Content Include="Views\Accs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admins\Data\" />
     <Folder Include="Areas\Employees\Data\" />
+    <Folder Include="Uploads\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -707,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110050607485_add_column_acount.resx">
       <DependentUpon>202110050607485_add_column_acount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230628471_create_foreikey.resx">
+      <DependentUpon>202111230628471_create_foreikey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

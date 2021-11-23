@@ -58,7 +58,7 @@ namespace DEMOMVC.Controllers
         [HttpPost]
         public ActionResult Login(Account acc, string returnUrl)
         {
-            try
+            //try
             {
                 if(!string.IsNullOrEmpty(acc.UserName) && !String.IsNullOrEmpty(acc.Password))
                 {
@@ -79,10 +79,10 @@ namespace DEMOMVC.Controllers
                 }
                 ModelState.AddModelError("", "Username and Password is require.");
             }
-            catch
-            {
-                ModelState.AddModelError("", "Hệ thống đang bảo trì, vui lòng liên hệ với quản trị viên");
-            }
+            //catch
+            //{
+            //    ModelState.AddModelError("", "Hệ thống đang bảo trì, vui lòng liên hệ với quản trị viên");
+            //}
             return View(acc);
         }
         public ActionResult Logout()

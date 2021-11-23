@@ -16,5 +16,6 @@ namespace DEMOMVC.Models
         public string Password { get; set; }
         [StringLength(10)]
         public string RoleID { get; set; }
+        public Role Role { get; set; }
     }
 }

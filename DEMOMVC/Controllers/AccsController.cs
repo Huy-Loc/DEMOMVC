@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,108 +10,112 @@ using DEMOMVC.Models;
 
 namespace DEMOMVC.Controllers
 {
-    public class StudentsController : Controller
+    public class AccsController : Controller
     {
         private LapTrinhQuanLyDBcontext db = new LapTrinhQuanLyDBcontext();
-        private ExcelProcess ex = new ExcelProcess();
 
-        // GET: Students
+        // GET: Accs
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+            var accounts = db.Accounts.Include(a => a.Role);
+            return View(accounts.ToList());
         }
 
-        // GET: Students/Details/5
+        // GET: Accs/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Account account = db.Accounts.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(account);
         }
 
-        // GET: Students/Create
+        // GET: Accs/Create
         public ActionResult Create()
         {
+            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleName");
             return View();
         }
 
-        // POST: Students/Create
+        // POST: Accs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentID,StudentName")] Student student)
+        public ActionResult Create([Bind(Include = "UserName,Password,RoleID")] Account account)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(student);
+                db.Accounts.Add(account);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(student);
+            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleName", account.RoleID);
+            return View(account);
         }
 
-        // GET: Students/Edit/5
+        // GET: Accs/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Account account = db.Accounts.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleName", account.RoleID);
+            return View(account);
         }
 
-        // POST: Students/Edit/5
+        // POST: Accs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentID,StudentName")] Student student)
+        public ActionResult Edit([Bind(Include = "UserName,Password,RoleID")] Account account)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(student).State = EntityState.Modified;
+                db.Entry(account).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(student);
+            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "RoleName", account.RoleID);
+            return View(account);
         }
 
-        // GET: Students/Delete/5
+        // GET: Accs/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Account account = db.Accounts.Find(id);
+            if (account == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(account);
         }
 
-        // POST: Students/Delete/5
+        // POST: Accs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Student student = db.Students.Find(id);
-            db.Students.Remove(student);
+            Account account = db.Accounts.Find(id);
+            db.Accounts.Remove(account);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -125,34 +127,6 @@ namespace DEMOMVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-
-        
-        private DataTable CopyDataFromExcelFile(HttpPostedFileBase file)
-        {
-
-            string fileExtension = file.FileName.Substring(file.FileName.IndexOf('.'));
-            string _FileName = "DS_SinhVien" + fileExtension;
-            string _path = VirtualPathUtility.Combine(Server.MapPath("~/Uploads/Excel"), _FileName);
-            file.SaveAs(_path);
-            DataTable dt = ex.ReadDataFromExcelFile(_path, false);
-            return dt;
-        }
-
-        SqlConnection con = new
-           SqlConnection(ConfigurationManager.ConnectionStrings["Your_DbContext"].ConnectionString);
-
-        private void OverwriteFastData(int? id)
-        {
-            DataTable dt = new DataTable();
-            SqlBulkCopy bulkCopy = new SqlBulkCopy(con);
-            bulkCopy.DestinationTableName = "Student";
-            bulkCopy.ColumnMappings.Add(1, "StudentID");
-            bulkCopy.ColumnMappings.Add(2, "StudentName");
-            con.Open();
-            bulkCopy.WriteToServer(dt);
-            con.Close();
         }
     }
 }
